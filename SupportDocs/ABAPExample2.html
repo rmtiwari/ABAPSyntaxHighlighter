@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="prismABAP.css" rel="stylesheet" />
+<script src="prismABAP.js"></script>
+
+</head>
+<body>
+<pre class="line-numbers language-abap"><code> REPORT  z_ram_test_csv_to_itab_regex.
+* this is a long-comment by ramtiwari.
+* select '100' from something.
+ a = 1 * 10.
+DATA : g_input TYPE string. "g_input(100) TYPE C.
+
+g_input = '"F1",F2,""Hello",  "How" are "you"","F3"'.
+
+REPLACE ALL OCCURRENCES OF
+  REGEX ',(?=(?:[^"]*$)|(?:[^"]*"[^"]*"[^"]*)*$)'
+  IN g_input WITH ';'.
+
+REPLACE FIRST OCCURRENCE OF
+  REGEX '^"'
+  IN g_input WITH ' '.
+
+REPLACE ALL OCCURRENCES OF
+  REGEX '";"|";|;"'
+  IN g_input WITH ';'.
+
+REPLACE ALL OCCURRENCES OF '""' IN g_input
+  WITH '"'.    "Added during testing
+
+REPLACE ALL OCCURRENCES OF REGEX '"$' IN g_input
+  WITH ' '.
+
+WRITE :/ g_input. 
+
+</code>
+</pre>
+<!--script src="prism-sql.min.js"></script-->
+
+</body>
+</html>
