@@ -1,7 +1,7 @@
 ABAPSyntaxHighlighter (PrismABAP):
 =====================
 
-It's is a lightweight, syntax highlighter for SAP's programming language ABAP and it's written in JavaScript - ( Duh!....ABAP is not written in JavaScript but just this syntax highlighter )
+It's a lightweight, syntax highlighter for SAP's programming language ABAP and it's written in JavaScript - ( Duh!....ABAP is not written in JavaScript but just this syntax highlighter )
 This is an extension of open source Syntax Highlighter <a href="http://www.prismjs.com">Prism</a>.
 
 
