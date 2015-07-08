@@ -304,6 +304,7 @@ var _ = self.Prism = {
 						var wrapped;
 
 						/* Next line amended by PragmatiQa(Ram) */
+						/* Fix for structure components, class methods/attributes and macros matching keyword names*/
 						if((token == 'keyword')&&((before.charAt(before.length-1) == '-')||(before.charAt(before.length-1) == '>')||(before.charAt(before.length-1) == '&'))) {
 							// wrapped = match;
 							wrapped = new Token(' ', inside? _.tokenize(match, inside) : match, alias);
