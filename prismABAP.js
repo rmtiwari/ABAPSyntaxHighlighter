@@ -436,8 +436,12 @@ Prism.languages.abap= {
 		pattern: /^[\*].*$/gm,
 		lookbehind: false
 	},
-    'string' : /(`|')(\\?.)*?\1/gm,
- 	'eol_comment': {
+	'string' : /(`|')(\\?.)*?\1/gm,
+	/* End Of Line comments should not interfere with strings when the  
+	quote character occurs within them. We assume a string being highlighted
+	inside an EOL comment is more acceptable than the oposite.
+	*/
+	'eol_comment': {
 		pattern: /(\s\").*$/gm,
 		lookbehind: false,
 		alias: 'comment'
