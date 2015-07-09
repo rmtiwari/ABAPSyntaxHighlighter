@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="../prismABAP.css" rel="stylesheet" />
+<script src="../prismABAP.js"></script>
+
+</head>
+<body>
+<pre class="line-numbers language-abap"><code>REPORT z_demo_report.
+
+DATA:
+  a000 TYPE i.
+
+  a000 = ( 1 + 2 ) - 3 * 4 / 5 ** 6.
+  
+  IF a000 &lt; 1 OR
+     a000 = 2 OR
+     a000 &gt; 3 OR
+     a000 &lt;&gt; 4 OR
+     a000 &lt;= 5 OR
+     a000 &gt;= 6.
+  ENDIF.
+  
+&quot; An end of line comment in the beginning of the line
+  
+  &quot; An end of line comment with a string
+  g_string = 'String2'. &quot; 'String1'.
+  
+  &quot; A string with double quotes
+  g_string = '"String2"'.
+  
+  &quot; String concatenation
+  g_string = 'String1' &amp;&amp; 'String2'.
+</code>
+</pre>
+<!--script src="prism-sql.min.js"></script-->
+
+</body>
+</html>
