@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+<link href="../prismABAP.css" rel="stylesheet" />
+<script src="../prismABAP.js"></script>
+
+</head>
+<body>
+<pre class="line-numbers language-abap"><code>WRITE 'text'. &quot; Keyword in the beginning of the code
+
+&quot; Keyword in the beginning of the line
+WRITE 'text'. 
+
+  &quot; In the middle of the code
+  LOOP AT lt_table INTO ls_structure
+    WHERE some_component = 1.
+  ENDLOOP.
+
+&quot; Continuation of statement in the beginning of the line
+  LOOP 
+AT lt_table INTO ls_structure &quot; I look ugly :(
+WHERE some_component = 1.
+  ENDLOOP.
+  
+&quot; Structure component with the same name as a keyword
+ls_structure-low = 1.
+
+&quot; Class method with the same name as a keyword
+cl_class=>create( ).
+
+</code>
+</pre>
+<!--script src="prism-sql.min.js"></script-->
+
+</body>
+</html>
