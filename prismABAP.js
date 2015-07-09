@@ -455,7 +455,7 @@ Prism.languages.abap= {
 	'number' : /\b-?(0x)?\d*\.?[\da-f]+\b/g,
 	// 'operator' : /\b(<|:|,|\(|\)|.|=|=\?)\b/gi,
 	// 'ignore' : /&(lt|gt|amp);/gi,
-	// 'punctuation' : /[,.:]/g
+	'punctuation' : /[,.:]/g
 };
 ;
 
