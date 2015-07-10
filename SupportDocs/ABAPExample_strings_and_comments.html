@@ -10,7 +10,13 @@
 DATA:
   &quot;! ABAPDoc
   g_string TYPE string.
-
+  
+  &quot; A simple string  
+  g_string = 'String1'.
+  
+  &quot; Another simple string  
+  g_string = `String1`.
+  
 * A commented string
 * g_string = 'String1'.
 
@@ -27,6 +33,22 @@ DATA:
   
   &quot; String dynamic concatenation
   g_string = 'String1' &amp;&amp; l_other_string.
+  
+  &quot; A string with escaped quotes inside
+  g_string = 'String2 '' String3'.
+  
+  &quot; A string with template string characters inside
+  g_string = ' the following is a string template | This is a template {  l_other_string } | .'.
+  
+  &quot; String template 
+  g_string = | This is a template {  l_other_string } |.
+  
+  &quot; String template with quotes inside
+  g_string = | This is a 'template' {  l_other_string } |.
+  
+  &quot; String template with escaped characters
+  g_string = |Characters \|, \{, and \} have to be escaped by \\ in literal text.|. 
+
 </code>
 </pre>
 <!--script src="prism-sql.min.js"></script-->
