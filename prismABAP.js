@@ -460,6 +460,11 @@ Prism.languages.abap= {
 		pattern: /(\s)(\+|-|\*{1,2}|\/|<|>|<=|>=|=|\?=|<>)(?=\s)/g,
 		lookbehind: true,
 	},
+	'string_operator' : {
+		pattern: /(\s)(&{1,2})(?=\s)/g,
+		lookbehind: true,
+		alias: "keyword"
+	},
 	// 'ignore' : /&(lt|gt|amp);/gi,
 	'punctuation' : /[,.:]/g
 };
