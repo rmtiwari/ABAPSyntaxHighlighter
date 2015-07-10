@@ -431,7 +431,6 @@ if (typeof module !== 'undefined' && module.exports) {
 }
 ;
 Prism.languages.abap= {
-
 	'comment': {
 		pattern: /^[\*].*$/gm,
 		lookbehind: false
@@ -469,7 +468,6 @@ Prism.languages.abap= {
 		lookbehind: true,
 		alias: "keyword"
 	},
-	
 	'token_operator' : [{
 		/* Special operators used to access structure components, class methods/atributes, etc...*/
 		pattern: /(\w)(-|~|->|=>|\||\{|\})(?=\w)/g,
