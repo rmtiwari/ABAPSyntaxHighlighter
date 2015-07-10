@@ -437,6 +437,11 @@ Prism.languages.abap= {
 		lookbehind: false
 	},
 	'string' : /(`|')(\\?.)*?\1/gm,
+	'string_template': {
+	  pattern: /(\||\})(\\?.)*?(?=\||\{)/g,
+	  lookbehind: true,
+	  alias: 'string'
+	},
 	/* End Of Line comments should not interfere with strings when the  
 	quote character occurs within them. We assume a string being highlighted
 	inside an EOL comment is more acceptable than the oposite.
@@ -464,12 +469,17 @@ Prism.languages.abap= {
 		lookbehind: true,
 		alias: "keyword"
 	},
-	/* Special operators used to access structure components, class methods/atributes, etc...*/
-	'token_operator' : {
-		pattern: /(\w)(-|~|->|=>)(?=\w)/g,
+	
+	'token_operator' : [{
+		/* Special operators used to access structure components, class methods/atributes, etc...*/
+		pattern: /(\w)(-|~|->|=>|\||\{|\})(?=\w)/g,
 		lookbehind: true,
 		alias: "punctuation"
-	},
+	}, {
+	    /*Special tokens used do delimit string templates*/
+	    pattern: /[\|\{\}]/g,
+		alias: "punctuation"
+	}],
 	'punctuation' : /[,.:\(\)]/g
 };
 ;
