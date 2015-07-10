@@ -464,6 +464,12 @@ Prism.languages.abap= {
 		lookbehind: true,
 		alias: "keyword"
 	},
+	/* Special operators used to access structure components, class methods/atributes, etc...*/
+	'token_operator' : {
+		pattern: /(\w)(-|~|->|=>)(?=\w)/g,
+		lookbehind: true,
+		alias: "punctuation"
+	},
 	'punctuation' : /[,.:]/g
 };
 ;
