@@ -453,7 +453,13 @@ Prism.languages.abap= {
 	// 'boolean' : /\b(TRUE|FALSE|NULL)\b/gi,
 	/* Numbers can be only integers. Decimal or Hex appear only as strings */
 	'number' : /\b\d+\b/g,
-	// 'operator' : /\b(<|:|,|\(|\)|.|=|=\?)\b/gi,
+	/* Operators must always be surounded by whitespace, they cannot be put 
+	adjacent to operands. 
+	*/
+	'operator' : {
+		pattern: /(\s)(\+|-|\*{1,2}|\/|<|>|<=|>=|=|\?=|<>)(?=\s)/g,
+		lookbehind: true,
+	},
 	// 'ignore' : /&(lt|gt|amp);/gi,
 	'punctuation' : /[,.:]/g
 };
