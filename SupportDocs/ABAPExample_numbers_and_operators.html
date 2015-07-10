@@ -9,7 +9,10 @@
 <pre class="line-numbers language-abap"><code>REPORT z_demo_report.
 
 DATA:
-  a000 TYPE i.
+  &quot;! A variable containing only hex digits (a-f,0-9)
+  a000 TYPE i,
+  lo_interface TYPE REF TO if_demo_interface,
+  lo_class TYPE REF TO object.
 
   a000 = ( 0010 + 2 ) - 3 * 4 / 5 ** 6.
   
@@ -21,13 +24,8 @@ DATA:
      a000 &gt;= 6.
   ENDIF.
   
-&quot; An end of line comment in the beginning of the line
-  
-  &quot; An end of line comment with a string
-  g_string = 'String2'. &quot; 'String1'.
-  
-  &quot; A string with double quotes
-  g_string = '"String2"'.
+  " Dynamic object assignment (with type cast check)
+  lo_interface ?= lo_class.
   
   &quot; String concatenation
   g_string = 'String1' &amp;&amp; 'String2'.
