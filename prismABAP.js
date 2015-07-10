@@ -470,7 +470,7 @@ Prism.languages.abap= {
 		lookbehind: true,
 		alias: "punctuation"
 	},
-	'punctuation' : /[,.:]/g
+	'punctuation' : /[,.:\(\)]/g
 };
 ;
 
